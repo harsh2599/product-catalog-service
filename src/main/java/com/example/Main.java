@@ -1,5 +1,7 @@
 package com.example;
 
+import java.util.List;
+
 import com.example.model.Product;
 
 public class Main {
@@ -13,5 +15,16 @@ public class Main {
         // Testing the Setter
         myProduct.setName("Gaming Mouse");
         System.out.println("Updated Product Name: " + myProduct.getName());
+
+
+        ProductService service = new ProductService();
+
+        System.out.println("--- Products above $100 ---");
+        service.getProductsAbovePrice(100.0)
+               .forEach(p -> System.out.println(p.getName() + ": $" + p.getPrice()));
+
+        System.out.println("\n--- All Product Names ---");
+        List<String> names = service.getAllProductNames();
+        System.out.println(names);
     }
 }
