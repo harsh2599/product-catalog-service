@@ -2,9 +2,12 @@
 /Users/harshreddiar/Work/Ddev/product-catalog-service/product-catalog-service/src/main/java/com/example/ProductService.java
 /Users/harshreddiar/Work/Ddev/product-catalog-service/product-catalog-service/src/main/java/com/example/controller/ProductController.java
 /Users/harshreddiar/Work/Ddev/product-catalog-service/product-catalog-service/src/main/java/com/example/dto/ProductDTO.java
+/Users/harshreddiar/Work/Ddev/product-catalog-service/product-catalog-service/src/main/java/com/example/dto/ReviewDTO.java
 /Users/harshreddiar/Work/Ddev/product-catalog-service/product-catalog-service/src/main/java/com/example/exception/ErrorResponse.java
 /Users/harshreddiar/Work/Ddev/product-catalog-service/product-catalog-service/src/main/java/com/example/exception/GlobalExceptionHandler.java
 /Users/harshreddiar/Work/Ddev/product-catalog-service/product-catalog-service/src/main/java/com/example/exception/ProductNotFoundException.java
 /Users/harshreddiar/Work/Ddev/product-catalog-service/product-catalog-service/src/main/java/com/example/model/Product.java
+/Users/harshreddiar/Work/Ddev/product-catalog-service/product-catalog-service/src/main/java/com/example/model/Review.java
 /Users/harshreddiar/Work/Ddev/product-catalog-service/product-catalog-service/src/main/java/com/example/repository/ProductRepository.java
+/Users/harshreddiar/Work/Ddev/product-catalog-service/product-catalog-service/src/main/java/com/example/repository/ReviewRepository.java
 /Users/harshreddiar/Work/Ddev/product-catalog-service/product-catalog-service/src/main/java/com/example/service/ProductService.java

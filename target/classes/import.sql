@@ -1,5 +1,1 @@
-INSERT INTO product (name, price) VALUES ('Laptop', 1200.00);
-INSERT INTO product (name, price) VALUES ('Mouse', 25.50);
-INSERT INTO product (name, price) VALUES ('Keyboard', 80.00);
-INSERT INTO product (name, price) VALUES ('Monitor', 300.00);
-INSERT INTO product (name, price) VALUES ('USB Cable', 15.00);
+-- Seed data is managed by Flyway (V1__init.sql)
