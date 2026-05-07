@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.example.service.ProductServiceTest" time="0.113" tests="10" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.example.controller.ProductIntegrationTest" time="1.94" tests="15" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -67,14 +67,81 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="addProduct_savesAndReturnsNewProduct" classname="com.example.service.ProductServiceTest" time="0.101"/>
-  <testcase name="addReview_throwsProductNotFoundException_whenProductMissing" classname="com.example.service.ProductServiceTest" time="0.001"/>
-  <testcase name="createProductWithReviews_savesProductAndAllReviews" classname="com.example.service.ProductServiceTest" time="0.004"/>
-  <testcase name="createProductWithReviews_throwsEmptyReviewsException_andRollsBack_whenReviewsEmpty" classname="com.example.service.ProductServiceTest" time="0.001"/>
-  <testcase name="getProductById_throwsProductNotFoundException_whenNotFound" classname="com.example.service.ProductServiceTest" time="0.001"/>
-  <testcase name="getAllProducts_returnsPageFromRepository" classname="com.example.service.ProductServiceTest" time="0.001"/>
-  <testcase name="createProductWithReviews_throwsEmptyReviewsException_whenReviewsNull" classname="com.example.service.ProductServiceTest" time="0.001"/>
-  <testcase name="getProductById_returnsProduct_whenFound" classname="com.example.service.ProductServiceTest" time="0.0"/>
-  <testcase name="addReview_savesReviewLinkedToProduct" classname="com.example.service.ProductServiceTest" time="0.0"/>
-  <testcase name="getAllProducts_respectsPageAndSizeParameters" classname="com.example.service.ProductServiceTest" time="0.001"/>
+  <testcase name="createProduct_returns400_whenPriceIsNegative" classname="com.example.controller.ProductIntegrationTest" time="0.277">
+    <system-out><![CDATA[18:49:26.717 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.controller.ProductIntegrationTest]: ProductIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+18:49:26.767 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.Main for test class com.example.controller.ProductIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2026-05-07T18:49:26.899+05:30  INFO 12157 --- [           main] c.e.controller.ProductIntegrationTest    : Starting ProductIntegrationTest using Java 25.0.2 with PID 12157 (started by harshreddiar in /Users/harshreddiar/Work/Ddev/product-catalog-service/product-catalog-service)
+2026-05-07T18:49:26.899+05:30  INFO 12157 --- [           main] c.e.controller.ProductIntegrationTest    : No active profile set, falling back to 1 default profile: "default"
+2026-05-07T18:49:27.106+05:30  INFO 12157 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-07T18:49:27.123+05:30  INFO 12157 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 2 JPA repository interfaces.
+2026-05-07T18:49:27.307+05:30  INFO 12157 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-07T18:49:27.366+05:30  INFO 12157 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-05-07T18:49:27.367+05:30  INFO 12157 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-07T18:49:27.383+05:30  INFO 12157 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:h2:mem:testdb (H2 2.3)
+2026-05-07T18:49:27.387+05:30  WARN 12157 --- [           main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
+2026-05-07T18:49:27.394+05:30  INFO 12157 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+2026-05-07T18:49:27.394+05:30  INFO 12157 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.003s)
+2026-05-07T18:49:27.397+05:30  INFO 12157 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2026-05-07T18:49:27.406+05:30  INFO 12157 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2026-05-07T18:49:27.408+05:30  INFO 12157 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "1 - init"
+2026-05-07T18:49:27.414+05:30  INFO 12157 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "2 - reviews"
+2026-05-07T18:49:27.418+05:30  INFO 12157 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema "PUBLIC", now at version v2 (execution time 00:00.003s)
+2026-05-07T18:49:27.452+05:30  INFO 12157 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-07T18:49:27.472+05:30  INFO 12157 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-05-07T18:49:27.483+05:30  INFO 12157 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-07T18:49:27.575+05:30  INFO 12157 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-07T18:49:27.596+05:30  WARN 12157 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-07T18:49:27.601+05:30  INFO 12157 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-07T18:49:27.929+05:30  INFO 12157 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-07T18:49:27.930+05:30  INFO 12157 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-07T18:49:28.064+05:30  WARN 12157 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-07T18:49:28.171+05:30  INFO 12157 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-05-07T18:49:28.171+05:30  INFO 12157 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-05-07T18:49:28.172+05:30  INFO 12157 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-05-07T18:49:28.181+05:30  INFO 12157 --- [           main] c.e.controller.ProductIntegrationTest    : Started ProductIntegrationTest in 1.366 seconds (process running for 1.748)
+]]></system-out>
+    <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/Users/harshreddiar/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+  </testcase>
+  <testcase name="createProductWithReviews_returns400_whenReviewsEmpty" classname="com.example.controller.ProductIntegrationTest" time="0.036"/>
+  <testcase name="getProductById_returns404_whenNotFound" classname="com.example.controller.ProductIntegrationTest" time="0.01"/>
+  <testcase name="createProduct_returns400_whenPriceIsNull" classname="com.example.controller.ProductIntegrationTest" time="0.003"/>
+  <testcase name="createProductWithReviews_doesNotPersistProduct_whenRollbackOccurs" classname="com.example.controller.ProductIntegrationTest" time="0.002"/>
+  <testcase name="getProductById_returnsProduct_whenFound" classname="com.example.controller.ProductIntegrationTest" time="0.013"/>
+  <testcase name="addReview_returns404_whenProductDoesNotExist" classname="com.example.controller.ProductIntegrationTest" time="0.003"/>
+  <testcase name="getAllProducts_paginationRespectsPageAndSize" classname="com.example.controller.ProductIntegrationTest" time="0.042">
+    <system-out><![CDATA[2026-05-07T18:49:28.568+05:30  WARN 12157 --- [           main] ration$PageModule$WarningLoggingModifier : Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+]]></system-out>
+  </testcase>
+  <testcase name="createProduct_returns400_whenNameIsBlank" classname="com.example.controller.ProductIntegrationTest" time="0.004"/>
+  <testcase name="createProduct_returns201WithBody" classname="com.example.controller.ProductIntegrationTest" time="0.003"/>
+  <testcase name="getAllProducts_returnsPageWithSeedData" classname="com.example.controller.ProductIntegrationTest" time="0.006"/>
+  <testcase name="addReview_returns400_whenCommentIsBlank" classname="com.example.controller.ProductIntegrationTest" time="0.004"/>
+  <testcase name="addReview_returns201WithComment" classname="com.example.controller.ProductIntegrationTest" time="0.004"/>
+  <testcase name="createProductWithReviews_returns201WithReviewsInBody" classname="com.example.controller.ProductIntegrationTest" time="0.004"/>
+  <testcase name="getAllProducts_secondPageReturnsCorrectSlice" classname="com.example.controller.ProductIntegrationTest" time="0.003"/>
 </testsuite>
