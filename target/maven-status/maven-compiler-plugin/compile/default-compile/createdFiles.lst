@@ -1,6 +1,8 @@
+com/example/dto/ProductWithReviewsDTO.class
 com/example/exception/ProductNotFoundException.class
 com/example/exception/GlobalExceptionHandler.class
 com/example/dto/ReviewDTO.class
+com/example/exception/EmptyReviewsException.class
 com/example/repository/ProductRepository.class
 com/example/service/ProductService.class
 com/example/exception/ErrorResponse.class

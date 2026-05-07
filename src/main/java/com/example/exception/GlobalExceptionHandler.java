@@ -24,6 +24,18 @@ public class GlobalExceptionHandler {
                 ));
     }
 
+    @ExceptionHandler(EmptyReviewsException.class)
+    public ResponseEntity<ErrorResponse> handleEmptyReviews(EmptyReviewsException ex) {
+        return ResponseEntity
+                .badRequest()
+                .body(new ErrorResponse(
+                        HttpStatus.BAD_REQUEST.value(),
+                        ex.getMessage(),
+                        LocalDateTime.now(),
+                        null
+                ));
+    }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorResponse> handleValidation(MethodArgumentNotValidException ex) {
         List<String> errors = ex.getBindingResult()
