@@ -1,1 +1,0 @@
--- Seed data is managed by Flyway (V1__init.sql)

@@ -1,0 +1,36 @@
+# Maven build output
+target/
+
+# IDE — IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# IDE — VS Code
+.vscode/
+
+# IDE — Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# Claude Code
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment / secrets
+.env
+.env.*
+*.env
+
+# Spring Boot dev-tools restart file
+.spring-boot-devtools.properties
+
+# Log files
+*.log
+logs/
