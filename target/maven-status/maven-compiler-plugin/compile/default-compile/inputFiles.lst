@@ -6,4 +6,5 @@
 /Users/harshreddiar/Work/Ddev/product-catalog-service/product-catalog-service/src/main/java/com/example/exception/GlobalExceptionHandler.java
 /Users/harshreddiar/Work/Ddev/product-catalog-service/product-catalog-service/src/main/java/com/example/exception/ProductNotFoundException.java
 /Users/harshreddiar/Work/Ddev/product-catalog-service/product-catalog-service/src/main/java/com/example/model/Product.java
+/Users/harshreddiar/Work/Ddev/product-catalog-service/product-catalog-service/src/main/java/com/example/repository/ProductRepository.java
 /Users/harshreddiar/Work/Ddev/product-catalog-service/product-catalog-service/src/main/java/com/example/service/ProductService.java
