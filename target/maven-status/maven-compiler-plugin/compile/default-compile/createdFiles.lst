@@ -1,3 +1,9 @@
 com/example/ProductService.class
+com/example/exception/ProductNotFoundException.class
+com/example/controller/ProductController.class
+com/example/exception/GlobalExceptionHandler.class
+com/example/dto/ProductDTO.class
 com/example/Main.class
+com/example/service/ProductService.class
 com/example/model/Product.class
+com/example/exception/ErrorResponse.class
